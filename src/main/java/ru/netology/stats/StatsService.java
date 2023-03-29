@@ -19,16 +19,18 @@ public class StatsService {
         return averageSalesMonth;
     }
 
-    public int maxSales(int[] sales) {
-        int maxMonth = 0; //
+    public int monthMaximumSale(int[] sales) {
+        int monthMaximum = 0;
+        int saleMaximum = sales[0];
 
-        for (int i = 0; i > sales.length; i++) {
-            if (sales[i] >= sales[maxMonth]) {
-                maxMonth = i;
+        for (int i = 0; i < sales.length; i++) {
+            if (sales[i] >= saleMaximum) {
+                monthMaximum = i;
+                saleMaximum=sales[i];
             }
         }
 
-        return maxMonth + 1;
+        return monthMaximum + 1;
     }
 
     public int minSales(int[] sales) {
@@ -43,31 +45,31 @@ public class StatsService {
         return minMonth + 1;
     }
 
-    public int minAverageSalesPerMonth(int[] sales) {
-        int min = minAverageSalesPerMonth(sales);
+    public int salesPerMonthBelowAverage(int[] sales) {
+        int averageSalesMonth = averageSalesPerMonth(sales);
         int quantityMinMonth = 0;
 
 
         for (int i = 0; i < sales.length; i++) {
-            if (sales[i] < min) {
-                quantityMinMonth = i;
+            if (sales[i] < averageSalesMonth) {
+                quantityMinMonth+=1;
             }
         }
 
-        return quantityMinMonth + 1;
+        return quantityMinMonth;
     }
 
     public int maxAverageSalesPerMonth(int[] sales) {
-        int max = maxAverageSalesPerMonth(sales);
+        int max = averageSalesPerMonth(sales);
         int quantityMaxMonth = 0;
 
 
-        for (int i = 0; i > sales.length; i++) {
+        for (int i = 0; i < sales.length; i++) {
             if (sales[i] > max) {
-                quantityMaxMonth = i;
+                quantityMaxMonth+=1;
             }
         }
 
-        return quantityMaxMonth + 1;
+        return quantityMaxMonth;
     }
 }

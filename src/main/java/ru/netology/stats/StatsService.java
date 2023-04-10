@@ -26,7 +26,7 @@ public class StatsService {
         for (int i = 0; i < sales.length; i++) {
             if (sales[i] >= saleMaximum) {
                 monthMaximum = i;
-                saleMaximum=sales[i];
+                saleMaximum = sales[i];
             }
         }
 
@@ -52,7 +52,7 @@ public class StatsService {
 
         for (int i = 0; i < sales.length; i++) {
             if (sales[i] < averageSalesMonth) {
-                quantityMinMonth+=1;
+                quantityMinMonth += 1;
             }
         }
 
@@ -66,7 +66,7 @@ public class StatsService {
 
         for (int i = 0; i < sales.length; i++) {
             if (sales[i] > max) {
-                quantityMaxMonth+=1;
+                quantityMaxMonth += 1;
             }
         }
 
